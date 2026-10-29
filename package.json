@@ -1,0 +1,15 @@
+{
+  "name": "nexthire",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Run the NextHire backend and frontend together, in parallel, from one command.",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently -n BACKEND,FRONTEND -c yellow,cyan \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "seed": "npm run seed --prefix backend",
+    "build": "npm run build --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
